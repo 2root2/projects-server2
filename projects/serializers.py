@@ -5,7 +5,7 @@ from .models import Projects, Forms, Users
 class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Projects
-        fields = ("project", "description", "createdon", "lastupdated", "formsubmitted", "total", "count")
+        fields = ("id", "project", "description", "createdon", "lastupdated", "formsubmitted", "total", "count")
         # fields = ("project", "descreption", "total", "formsubmitted", "createdon")
 
 class FormSerializer(serializers.ModelSerializer):

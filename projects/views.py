@@ -5,6 +5,7 @@ from rest_framework import generics
 from django.shortcuts import render
 from .models import Projects, Forms, Users
 from .serializers import ProjectSerializer, FormSerializer, UserSerializer
+from random import randint
 # Create your views here.
 
 class ListProjectsView(generics.ListAPIView):
@@ -19,6 +20,9 @@ class ListProjectsView(generics.ListAPIView):
         a_project= Projects.objects.create(
             project=request.data["project"],
             description=request.data["description"],
+            formsubmitted= randint(1,99),
+            total= randint(1,99),
+            count=randint(1,99),
             # forms=request.data["forms"]
             # profile = Users.set(request.data["profile"])
         )
